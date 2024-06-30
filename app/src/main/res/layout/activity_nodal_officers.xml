@@ -28,188 +28,169 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/row1"
+            android:id="@+id/searchLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/amazonName">
+            app:layout_constraintTop_toBottomOf="@id/amazonName">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/nodalofficers"
+            <EditText
+                android:id="@+id/searchEditText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
+                android:hint="Search"
+                android:background="@drawable/edittextbg"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
 
-                <RelativeLayout
-                    android:background="@color/grey"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="20dp">
-
-                    <ImageView
-                        android:id="@+id/phone"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/call" />
-
-                    <TextView
-                        android:id="@+id/call"
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/phone"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/monda"
-                        android:text="Phone"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
-
-                <RelativeLayout
-                    android:background="@color/grey"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="20dp">
-
-                    <ImageView
-                        android:id="@+id/mail"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/mail" />
-
-                    <TextView
-                        android:id="@+id/mailimg"
-                        android:textColor="@color/black"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/mail"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/monda"
-                        android:text="Email"
-                        android:textSize="15sp" />
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:background="@drawable/leakbuttonbg"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/row2"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/nodalofficers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/row1">
+            app:layout_constraintTop_toBottomOf="@id/searchLayout">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center">
 
-                <RelativeLayout
-                    android:background="@color/grey"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="20dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/compimg"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:src="@drawable/company" />
 
                     <TextView
                         android:id="@+id/company"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/compimg"
-                        android:textColor="@color/black"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/monda"
-                        android:text="Company Name"
-                        android:textSize="15sp" />
+                        android:text="Company"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:gravity="center_horizontal" />
 
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+                </LinearLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="10dp">
 
-                <RelativeLayout
-                    android:background="@color/grey"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="20dp">
+                    <ImageView
+                        android:id="@+id/mail"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/mail" />
+
+                    <TextView
+                        android:id="@+id/mailimg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/monda"
+                        android:text="Email"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="10dp">
 
                     <ImageView
                         android:id="@+id/officerbadge"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:src="@drawable/dept" />
 
                     <TextView
                         android:id="@+id/Nodal"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/officerbadge"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@font/monda"
-                        android:text="Department"
+                        android:gravity="center_horizontal"
+                        android:text="Dept"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="12sp" />
 
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
+                </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/row3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/row2">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="10dp">
 
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/phone"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/call" />
+
+                    <TextView
+                        android:id="@+id/call"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/monda"
+                        android:text="Phone"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:gravity="center_horizontal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

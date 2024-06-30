@@ -1,142 +1,182 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/leakbg"
-    android:id="@+id/ip"
+    android:foregroundGravity="bottom|center"
     tools:context=".IpInvestigation">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/constraintLayout"
         android:layout_marginTop="20dp">
 
         <TextView
             android:id="@+id/amazonName"
             android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="86dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="87dp"
+            android:layout_marginEnd="24dp"
             android:fontFamily="@font/monda"
             android:text="IP Investigation"
-            android:textColor="#000000"
-            android:textSize="30sp"
+            android:textColor="@color/grey"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/toolsCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amazonName">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <!-- Tool1 Section -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp">
+
+                    <ImageView
+                        android:id="@+id/tool1Image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/toolone"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/tool1Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tool1"
+                        android:textSize="14sp"
+                        android:textColor="#000000"
+                        android:layout_below="@id/tool1Image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="4dp" />
+                </RelativeLayout>
+
+                <!-- Tool2 Section -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/tool2Image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/tooltwo"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:id="@+id/tool2Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tool2"
+                        android:textSize="14sp"
+                        android:textColor="#000000"
+                        android:layout_below="@id/tool2Image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="4dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- VPN & Proxy Detection Section -->
+        <TextView
+            android:id="@+id/vpnProxyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VPN And Proxy Detection"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@id/toolsCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/vpnProxyDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test to see if an IP address is either a VPN, Proxy, TOR Exit Node, or Private Relay"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            app:layout_constraintTop_toBottomOf="@id/vpnProxyTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="16dp"
+            android:layout_marginBottom="40dp"/>
+
+        <!-- EditText and Button Section -->
         <LinearLayout
-            android:id="@+id/row1"
+            android:id="@+id/editTextButtonLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/vpnProxyDescription"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/amazonName"
-            app:layout_constraintVertical_bias="0.0">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/grey"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:id="@+id/emailphonelookup"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/emailimage"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/monda"
-                        android:text="Tool1"
-                        android:textColor="#000000"
-                        android:textSize="15sp" />
-
-                    <ImageView
-                        android:id="@+id/emailimage"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:src="@drawable/iptoolone" />
-
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </FrameLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/row2"
-            android:layout_width="406dp"
-            android:layout_height="273dp"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/row1">
+            android:gravity="center">
 
-            <FrameLayout
-                android:layout_width="187dp"
-                android:layout_height="270dp" />
-
-            <androidx.cardview.widget.CardView
+            <EditText
+                android:id="@+id/editText"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="20dp">
+                android:hint="Enter text"
+                android:padding="12dp"
+                android:background="@drawable/edittextbg"
+                android:layout_marginEnd="10dp" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/grey"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:id="@+id/leaksearch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/leakimage"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/monda"
-                        android:text="Tool2"
-                        android:textColor="#000000"
-                        android:textSize="15sp" />
-
-                    <ImageView
-                        android:id="@+id/leakimage"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/iptooltwo" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:background="@drawable/leakbuttonbg" />
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+
+
+
+
